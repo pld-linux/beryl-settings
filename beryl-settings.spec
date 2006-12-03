@@ -1,13 +1,13 @@
 Summary:	A GTK+ tool to configure beryl
 Summary(pl):	Narzêdzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
-Version:	20061102
+Version:	20061201
 Release:	1
 License:	GPL v2+
 Group:		X11/Window Managers/Tools
 #Source0:	http://distfiles.xgl-coffee.org/beryl-settings/%{name}-%{version}.tar.bz2
 Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	94aa507ed6bc82cd918da0e325536489
+# Source0-md5:	86bcfbcc048fd6a0f5abfa3c7ce72f32
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	beryl-core-devel
@@ -50,5 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/beryl-settings
 %{_desktopdir}/beryl-settings.desktop
 %{_pixmapsdir}/*.svg
-%{_datadir}/beryl/hints
 %{_mandir}/man1/*.1*
