@@ -1,13 +1,12 @@
 Summary:	A GTK+ tool to configure beryl
 Summary(pl):	Narzêdzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
-Version:	20061201
+Version:        0.1.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Window Managers/Tools
-#Source0:	http://distfiles.xgl-coffee.org/beryl-settings/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	86bcfbcc048fd6a0f5abfa3c7ce72f32
+Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	bd88d56f32b23d42d44c85a92f0654f3
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	beryl-core-devel
@@ -26,7 +25,33 @@ A GTK+ tool to configure beryl.
 Narzêdzie GTK+ do konfiguracji beryla.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+mv -f po/{es_AR,ar}.po
+mv -f po/{es_ES,es}.po
+mv -f po/{fr_FR,fr}.po
+mv -f po/{hu_HU,hu}.po
+mv -f po/{it_IT,it}.po
+mv -f po/{ja_JP,ja}.po
+mv -f po/{ko_KR,ko}.po
+mv -f po/{pt_PT,pt}.po
+mv -f po/{sv_SE,sv}.po
+
+    # NOTE: check the list ofter any upgrade!
+cat > po/LINGUAS <<EOF
+ar
+es
+fr
+hu
+it
+ja
+ko
+pt_BR
+pt
+sv
+zh_CN
+zh_HK
+zh_TW
+EOF
 
 %build
 autoreconf -v --install
