@@ -1,17 +1,17 @@
 Summary:	A GTK+ tool to configure beryl
 Summary(pl):	Narzêdzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
-Version:	0.1.4
+Version:	0.1.99.2
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers/Tools
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	527c6cf2a91d7249b409f123602709f6
+# Source0-md5:	268098ad5bb563d0c5abbbc3af81f00f
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	beryl-core-devel >= 1:0.1.3
+BuildRequires:	beryl-core-devel >= 1:0.1.99.2
 BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
@@ -30,42 +30,13 @@ Narzêdzie GTK+ do konfiguracji beryla.
 
 %prep
 %setup -q
-mv -f po/{ca_ES,ca}.po
-mv -f po/{es_ES,es}.po
-mv -f po/{fr_FR,fr}.po
-mv -f po/{hu_HU,hu}.po
-mv -f po/{it_IT,it}.po
-mv -f po/{ja_JP,ja}.po
-mv -f po/{ko_KR,ko}.po
-mv -f po/{pt_PT,pt}.po
-mv -f po/{sv_SE,sv}.po
-# sv_FI is identical to sv_SE
-
-# NOTE: check the list after any upgrade!
-cat > po/LINGUAS <<EOF
-ca
-es
-es_AR
-fr
-hu
-it
-ja
-ko
-pt_BR
-pt
-sv
-zh_CN
-zh_HK
-zh_TW
-EOF
+echo '#beryl version header' > VERSION
+echo VERSION=0.1.99.2 > VERSION
 
 %build
-%{__intltoolize}
+autoreconf -v --install
 %{__glib_gettextize} --copy --force
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
+%{__intltoolize}
 %configure
 %{__make}
 
@@ -82,6 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_bindir}/beryl-settings
-%{_desktopdir}/beryl-settings.desktop
-%{_pixmapsdir}/*.svg
-%{_mandir}/man1/*.1*
+%{_datadir}/bsm
+%{_iconsdir}/hicolor/scalable/apps/beryl-settings.svg
