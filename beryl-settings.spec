@@ -16,8 +16,10 @@ BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
+BuildRequires:	python-pygtk-devel >= 2.0
 Requires:	beryl-core >= 1:0.1.99.2
 Requires:	beryl-plugins >= 1:0.1.99.2
+Requires:	python-pygtk-gtk >= 2.0
 Obsoletes:	compiz-settings-manager
 Obsoletes:	csm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
