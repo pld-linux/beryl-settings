@@ -16,8 +16,8 @@ BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
-Requires:	beryl-core >= 1:0.1.3
-Requires:	beryl-plugins >= 1:0.1.3
+Requires:	beryl-core >= 1:0.1.99.2
+Requires:	beryl-plugins >= 1:0.1.99.2
 Obsoletes:	compiz-settings-manager
 Obsoletes:	csm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,7 +31,7 @@ Narzêdzie GTK+ do konfiguracji beryla.
 %prep
 %setup -q
 echo '#beryl version header' > VERSION
-echo VERSION=0.1.99.2 > VERSION
+echo VERSION=0.1.99.2 >> VERSION
 
 %build
 autoreconf -v --install
