@@ -37,9 +37,11 @@ echo '#beryl version header' > VERSION
 echo VERSION=0.1.99.2 >> VERSION
 
 %build
-autoreconf -v --install
 %{__glib_gettextize} --copy --force
 %{__intltoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
@@ -47,7 +49,7 @@ autoreconf -v --install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-    DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
