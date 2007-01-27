@@ -37,7 +37,7 @@ echo '#beryl version header' > VERSION
 echo VERSION=0.1.99.2 >> VERSION
 
 %build
-%{__glib_gettextize} --copy --force
+%{__glib_gettextize}
 %{__intltoolize}
 %{__aclocal}
 %{__autoconf}
