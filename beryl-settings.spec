@@ -37,6 +37,14 @@ Narzêdzie GTK+ do konfiguracji beryla.
 echo '#beryl version header' > VERSION
 echo VERSION=%{version} >> VERSION
 
+mv -f po/{ca_ES,ca}.po
+cat > po/LINGUAS <<EOF
+ca
+es
+nl
+pl
+EOF
+
 %build
 %{__glib_gettextize}
 %{__intltoolize}
