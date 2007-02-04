@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2.0
 Requires:	beryl-core >= 1:%{version}
 Requires:	beryl-plugins >= 1:%{version}
-Requires:	beryl-settings-bindings
+Requires:	beryl-settings-bindings >= 1:%{version}
 Requires:	python-pygtk-gtk >= 2.0
 Obsoletes:	compiz-settings-manager
 Obsoletes:	csm
