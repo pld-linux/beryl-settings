@@ -1,5 +1,5 @@
 Summary:	A GTK+ tool to configure beryl
-Summary(pl.UTF-8):   Narzędzie GTK+ do konfiguracji beryla
+Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
 Version:	0.1.9999.1
 Release:	1
