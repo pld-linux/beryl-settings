@@ -18,6 +18,9 @@ BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2.0
+BuildRequires:	rpmbuild(macros) >= 1.311
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
 Requires:	beryl-core >= 1:%{version}
 Requires:	beryl-plugins >= 1:%{version}
 Requires:	beryl-settings-bindings >= 1:%{version}
@@ -65,10 +68,16 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_bindir}/beryl-settings
 %{_datadir}/bsm
 %{_iconsdir}/hicolor/scalable/apps/beryl-settings.svg
-%{_desktopdir}/*.desktop
+%{_desktopdir}/beryl-settings.desktop
