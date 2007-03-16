@@ -1,13 +1,13 @@
 Summary:	A GTK+ tool to configure beryl
 Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
-Version:	0.1.9999.2
+Version:	0.2.0
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers/Tools
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	3cbb0d585cc69d2a9a3c37f113b9f9e8
+# Source0-md5:	cc58ac1aae61bb4dae8e6da693c398a2
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
@@ -40,12 +40,23 @@ Narzędzie GTK+ do konfiguracji beryla.
 echo '#beryl version header' > VERSION
 echo VERSION=%{version} >> VERSION
 
-mv -f po/{ca_ES,ca}.po
+mv -f po/{hu_HU,hu}.po
+mv -f po/{pt_PT,pt}.po
 cat > po/LINGUAS <<EOF
 ca
 es
+es_AR
+fr
+hu
+it
+ja
+ko
 nl
 pl
+pt
+zh_CN
+zh_HK
+zh_TW
 EOF
 
 %build
