@@ -8,6 +8,7 @@ License:	GPL v2+
 Group:		X11/Window Managers/Tools
 Source0:	http://releases.beryl-project.org/%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	cc58ac1aae61bb4dae8e6da693c398a2
+Patch0:		%{name}-desktop.patch
 URL:		http://beryl-project.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
@@ -37,6 +38,7 @@ Narzędzie GTK+ do konfiguracji beryla.
 
 %prep
 %setup -q
+%patch0 -p1
 echo '#beryl version header' > VERSION
 echo VERSION=%{version} >> VERSION
 
