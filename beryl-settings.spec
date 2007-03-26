@@ -26,6 +26,7 @@ Requires:	beryl-core >= 1:%{version}
 Requires:	beryl-plugins >= 1:%{version}
 Requires:	beryl-settings-bindings >= 1:%{version}
 Requires:	python-pygtk-gtk >= 2.0
+Requires:	librsvg >= 2.16
 Obsoletes:	compiz-settings-manager
 Obsoletes:	csm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
