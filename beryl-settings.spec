@@ -2,7 +2,7 @@ Summary:	A GTK+ tool to configure beryl
 Summary(pl.UTF-8):	Narzędzie GTK+ do konfiguracji beryla
 Name:		beryl-settings
 Version:	0.2.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Window Managers/Tools
@@ -20,13 +20,13 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2.0
 BuildRequires:	rpmbuild(macros) >= 1.311
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires:	beryl-core >= 1:%{version}
 Requires:	beryl-plugins >= 1:%{version}
 Requires:	beryl-settings-bindings >= 1:%{version}
-Requires:	python-pygtk-gtk >= 2.0
 Requires:	librsvg >= 2.16
+Requires:	python-pygtk-gtk >= 2.0
 Obsoletes:	compiz-settings-manager
 Obsoletes:	csm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
