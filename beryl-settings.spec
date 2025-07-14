@@ -39,7 +39,7 @@ Narzędzie GTK+ do konfiguracji beryla.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 echo '#beryl version header' > VERSION
 echo VERSION=%{version} >> VERSION
 
